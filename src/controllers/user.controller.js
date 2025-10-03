@@ -205,7 +205,7 @@ const sendOtpForReset = async (req, res) => {
     await otpModel.create({ email, otp });
 
     // ✅ Send OTP via Email (Nodemailer)
-    mailForOtp(email)
+    mailForOtp(email,otp)
    
 
     return res.status(200).json({
