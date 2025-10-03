@@ -56,6 +56,7 @@ const userRegistration = async (req, res) => {
       userData,
     });
   } catch (error) {
+    console.log(error.message)
     return res.status(500).json({
       success: false,
       message: error.message || "Internal server error",
@@ -63,7 +64,7 @@ const userRegistration = async (req, res) => {
   }
 };
 
-//--------------Registration-----------------------
+//--------------Login-----------------------
 
 const userLogin = async (req, res) => {
   try {
