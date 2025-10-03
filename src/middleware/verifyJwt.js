@@ -15,7 +15,7 @@ const verifyJwt = async (req, res, next) => {
     console.error("JWT Verification Error:", err);
     return res.status(403).json({
       message: "Invalid token",
-      error: err, // send full error so you can debug
+      error: err,
     });
   }
 };
