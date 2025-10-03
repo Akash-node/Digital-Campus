@@ -2,13 +2,14 @@ require('dotenv').config();
 const express = require('express')
 const app = express()
 const cors = require('cors')
-const cookieParser = require('cookie-parser');
+const cookieParser = require('cookie-parser')
 const connectdb = require("./src/database/db.js")
+const userRouter = require("./src/routes/user.route.js");
 
 
 // Enable CORS
 app.use(cors({
-  origin: ["http://localhost:8080", "https://digitalcampus01.netlify.app"],  // Replace with your deployed frontend URL
+  origin: ["http://localhost:8081", "https://digitalcampus01.netlify.app"],  // Replace with your deployed frontend URL
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
@@ -18,11 +19,11 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser())
 
-app.use("/", (req,res)=> {
-    res.send("Hello Akash, Your server is running!!!")
-})
+// app.use("/", (req,res)=> {
+//     res.send("Hello Akash, Your server is running!!!")
+// })
 
-// app.use("/api/users", userRouter);
+app.use("/api/users", userRouter);
 
 
 app.get("/hello",(req,res)=>{
