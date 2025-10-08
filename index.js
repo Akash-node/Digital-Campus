@@ -9,7 +9,7 @@ const userRouter = require("./src/routes/user.route.js");
 
 // Enable CORS
 app.use(cors({
-  origin: ["http://localhost:8081", "https://digitalcampus01.netlify.app"],  // Replace with your deployed frontend URL
+  origin: ["http://localhost:8081", "https://digitalcampus01.netlify.app","https://digitalcampus07.netlify.app"],  // Replace with your deployed frontend URL
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
