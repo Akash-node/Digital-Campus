@@ -57,6 +57,7 @@ const userRegistration = async (req, res) => {
     return res.status(201).json({
       message: "user created successfully",
       userData,
+      JwtToken
     });
   } catch (error) {
     console.log(error.message)
@@ -99,7 +100,7 @@ const userLogin = async (req, res) => {
   return res.status(200).json({
     message: "login successfully",
     userData,
-    JwtToken,    
+    JwtToken,   
   });
   } catch (error) {
     return res.status(500).json({
